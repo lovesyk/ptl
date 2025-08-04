@@ -7,18 +7,31 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "build:openapi": "openapi-typescript ../api/openapi.json -o ./app/api/schema.d.ts",
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "start": "TEST=test react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "shadcn": "shadcn",
+    "deploy": "pnpm --filter=\"web...\" --prod --legacy deploy prod"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "isbot": "^5.1.27",
+    "lucide-react": "^0.536.0",
+    "next-themes": "^0.4.6",
+    "openapi-fetch": "^0.14.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.5.3"
+    "react-router": "^7.5.3",
+    "sonner": "^2.0.6",
+    "tailwind-merge": "^3.3.1",
+    "use-debounce": "^10.0.5"
   },
   "devDependencies": {
     "@react-router/dev": "^7.5.3",
@@ -26,7 +39,10 @@
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "openapi-typescript": "^7.8.0",
+    "shadcn": "^2.10.0",
     "tailwindcss": "^4.1.4",
+    "tw-animate-css": "^1.3.6",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"
